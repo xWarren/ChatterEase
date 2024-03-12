@@ -13,9 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       title: 'Chatter Ease',
-      theme: ThemeData(),
+      theme: ThemeData(
+        useMaterial3: false,
+      ),
       home: const SplashPage(),
     );
   }

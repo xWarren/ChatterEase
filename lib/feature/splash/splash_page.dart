@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../core/resources/assets.dart';
 import '../../core/resources/colors.dart';
@@ -25,10 +26,19 @@ class _SplashPageState extends State<SplashPage> {
     ));
     super.initState();
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.fade,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
