@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../calls/call_page.dart';
 import '../chat/chat_page.dart';
@@ -42,22 +43,23 @@ class _DashboardPageState extends State<DashboardPage> with TickerProviderStateM
   Widget build(BuildContext context) {
     
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.bottomCenter,
+      body: Column(
         children: [
-          TabBarView(
-            controller: tabController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: contents.toList(),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              physics: const NeverScrollableScrollPhysics(),
+              children: contents.toList(),
+            ),
           ),
-          BottomNavigation(
-            tabController: tabController,
-            selectedIndex: selectedIndex,
-            onTabChanged: (index) {
-              print(selectedIndex);
-            }),
         ],
-
+      ),
+      bottomNavigationBar: BottomNavigation(
+        tabController: tabController,
+        selectedIndex: selectedIndex,
+        onTabChanged: (index) {
+          print(selectedIndex);
+        }
       ),
     );
   }
