@@ -5,11 +5,10 @@ import '../../core/routes/routes.dart';
 class SplashController extends GetxController {
 
   void nextPage() {
-      Get.offAndToNamed(Routes.onboardingRoute);
+    Get.offAndToNamed(Routes.onboardingRoute);
   }
-
-
-   @override
+  
+  @override
   void onInit() {
     Future.delayed(3.seconds, () => nextPage());
     super.onInit();

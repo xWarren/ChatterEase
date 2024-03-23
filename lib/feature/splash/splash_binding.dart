@@ -1,5 +1,6 @@
-import 'package:chatter_ease/feature/splash/splash_controller.dart';
 import 'package:get/get.dart';
+
+import 'splash_controller.dart';
 
 class SplashBinding extends Bindings {
   @override
