@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/services.dart';
 
 import '_components/splash_appbar.dart';
 import '_components/splash_body.dart';

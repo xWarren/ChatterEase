@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final String prefixImage;
   final String? suffixImage;
+  final TextInputAction textInputAction;
 
   const CustomTextFormField({
     Key? key,
@@ -19,9 +20,10 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.validator,
     this.onChanged,
+    this.suffixImage,
     required this.hintText,
     required this.prefixImage,
-    this.suffixImage,
+    required this.textInputAction,
   }) : super(key: key);
 
   
@@ -33,6 +35,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       validator: validator,
       onChanged: onChanged,
+      textInputAction: textInputAction,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         fillColor: Colors.white,
@@ -60,7 +63,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: CustomColors.black)
+          borderSide: BorderSide(color: Colors.grey.shade400)
         ),
       ),
     );

@@ -1,9 +1,11 @@
+import 'package:chatter_ease/feature/authentication/register/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/custom/custom_formfield.dart';
 import '../../../core/resources/assets.dart';
 import '../../../core/resources/colors.dart';
+import '../../dashboard/dashboard_page.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -14,9 +16,19 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  void goToDashboard() {
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (context) => const DashboardPage()
+      ), 
+      (Route<dynamic> route) => false
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(
           parent: BouncingScrollPhysics()
@@ -82,7 +94,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(width: 5),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RegisterPage()));
+              print("Register Page");
+            },
             child: const Text(
               "Create Account",
               style: TextStyle(
@@ -109,7 +124,9 @@ class _LoginPageState extends State<LoginPage> {
             borderRadius: BorderRadius.circular(8)
           )
         ),
-        onPressed: () {},
+        onPressed: () {
+          goToDashboard();
+        },
         child: const Text(
           "Login",
           style: TextStyle(
@@ -166,6 +183,7 @@ class _LoginPageState extends State<LoginPage> {
             prefixImage: Assets.icPassword,
             suffixImage: Assets.icShowPassword,
             obscureText: true,
+            textInputAction: TextInputAction.done,
           ),
         ],
       ),     
@@ -192,6 +210,7 @@ class _LoginPageState extends State<LoginPage> {
             hintText: "Enter your email...",
             prefixImage: Assets.icEmail,
             suffixImage: Assets.icCheck,
+            textInputAction: TextInputAction.next,
           ),
         ],
       ),     
