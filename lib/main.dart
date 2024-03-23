@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'feature/splash/splash_page.dart';
+import 'core/routes/pages.dart';
+import 'core/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +14,12 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Chatter Ease',
       theme: ThemeData(),
-      home: const SplashPage(),
+      initialRoute: Routes.splashRoute,
+      getPages: Pages.pages,
     );
   }
 }
