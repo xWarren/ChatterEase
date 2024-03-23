@@ -1,5 +1,6 @@
 import 'package:chatter_ease/feature/authentication/register/register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../core/custom/custom_formfield.dart';
 import '../../../core/resources/assets.dart';
@@ -33,18 +34,21 @@ class _LoginPageState extends State<LoginPage> {
           parent: BouncingScrollPhysics()
         ),
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildImage(),
-              _buildText(),
-              _buildEmail(),
-              _buildPassword(),
-              _buildForgotPassword(),
-              _buildButton(),
-              _buildCreateAccount()
-            ],
+          child: SizedBox(
+            height: Get.height,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _buildImage(),
+                _buildText(),
+                _buildEmail(),
+                _buildPassword(),
+                _buildForgotPassword(),
+                _buildButton(),
+                _buildCreateAccount()
+              ],
+            ),
           ),
         ),
       ),
